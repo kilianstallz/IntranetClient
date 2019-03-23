@@ -1,7 +1,7 @@
 // Starting Point
 import axios from 'axios'
 
-let baseDomain = 'http://localhost:3001'
+let baseDomain = 'http://10.0.0.18:3001'
 let baseURL = `${baseDomain}/intranet`
 
 export default axios.create({
