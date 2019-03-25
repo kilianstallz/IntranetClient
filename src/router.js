@@ -4,6 +4,9 @@ import Home from './views/Home.vue'
 import store from './store'
 
 import CreateUser from './views/Auth/CreateUser.vue'
+import Shopping from './views/Shopping.vue'
+import ShoppingCreate from './views/ShoppingCreate.vue'
+import ShoppingPage from './views/ShoppingPage.vue'
 
 Vue.use(Router)
 
@@ -18,6 +21,24 @@ const router = new Router({
       meta: {
         requriesAuth: true
       }
+    },
+    {
+      path: '/shopping',
+      name: 'shopping',
+      component: Shopping,
+      meta: {
+        requriesAuth: true
+      },
+      children: [
+        {
+          path: '/shopping/default',
+          component: ShoppingPage
+        },
+        {
+          path: '/shopping/create',
+          component: ShoppingCreate
+        }
+      ]
     },
     {
       path: '/about',

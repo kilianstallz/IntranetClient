@@ -1,6 +1,6 @@
 <template>
-    <md-app md-waterfall md-mode="fixed-last">
-      <md-app-toolbar class="md-large md-dense md-primary">
+    <md-app md-waterfall md-mode="fixed">
+      <md-app-toolbar class=" md-dense md-primary">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
             <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
@@ -16,15 +16,6 @@
             </md-button>
           </div>
         </div>
-
-        <div class="md-toolbar-row">
-          <md-tabs class="md-primary">
-            <md-tab id="tab-home" md-label="Home"></md-tab>
-            <md-tab id="tab-pages" md-label="Pages"></md-tab>
-            <md-tab id="tab-posts" md-label="Posts"></md-tab>
-            <md-tab id="tab-favorites" md-label="Favorites"></md-tab>
-          </md-tabs>
-        </div>
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible">
@@ -32,13 +23,13 @@
 
         <md-list>
           <md-list-item>
-            <md-icon>move_to_inbox</md-icon>
-            <span class="md-list-item-text">Inbox</span>
+            <md-icon>home</md-icon>
+            <router-link tag="span" class="md-list-item-text" to="/">Übersicht</router-link>
           </md-list-item>
 
           <md-list-item>
-            <md-icon>send</md-icon>
-            <span class="md-list-item-text">Sent Mail</span>
+            <md-icon>list</md-icon>
+            <router-link tag="span" class="md-list-item-text" to="/shopping/default">Einkaufsliste</router-link>
           </md-list-item>
 
           <md-list-item>

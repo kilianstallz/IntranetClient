@@ -9,7 +9,7 @@ const state = {
 }
 const getters = {
   isLoggedIn: state => !!state.token,
-  authStatus: state => state.status,
+  authStatus: state => !!state.token && !!state.user,
   userProfile: state => state.user
 }
 const mutations = {
